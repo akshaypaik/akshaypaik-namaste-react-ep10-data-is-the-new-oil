@@ -67,6 +67,11 @@ Currently, two official plugins are available:
     - Break down app into smaller logical chunks 
     - Grocery Component for example
 
+    # Higher Order Component
+    - Normal JS function.
+    - Function which takes a component and returns a component.
+    - Refer GroceryCard.jsx for the example of implementation.
+
 
 
 

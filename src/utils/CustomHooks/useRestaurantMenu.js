@@ -18,7 +18,10 @@ const useRestaurantMenu = (resturantId) => {
         const menuItemCardsData = [];
         jsonData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.forEach((card) => {
             if (card.card?.card?.itemCards) {
-                menuItemCardsData.push(...card.card?.card?.itemCards);
+                const title = card.card?.card?.title;
+                card.card.card.itemCards.forEach(itemCard => {
+                    menuItemCardsData.push({ ...itemCard, title });
+                });
             }
         })
         console.log("menuItemCardsData: ", menuItemCardsData);

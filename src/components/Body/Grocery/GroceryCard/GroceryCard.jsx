@@ -6,7 +6,7 @@ export default function GroceryCard({ groceryInfo }) {
 
     const { name, brand, countryOfOrigin, imported } = groceryInfo?.product;
     const { mrp, packsize, unitOfMeasure, weightInGms, formattedPacksize, images, ratingSummary } = groceryInfo?.productVariant;
-    const { outOfStock, sellingPrice } = groceryInfo;
+    const { outOfStock, sellingPrice, isNewProduct } = groceryInfo;
     const [highlightGroceryLogo, setHightlightGroceryLogo] = useState(false);
 
     const onMouseOverCardHover = () => {
@@ -39,4 +39,19 @@ export default function GroceryCard({ groceryInfo }) {
             <button className='add-to-card-btn'>Add to Cart</button>
         </div>
     )
+}
+
+
+// Higher order component => withNewProductLabel
+// input => GroceryCard => GroceryCardNew
+export const withNewProductLabel = (GroceryCard) => {
+    //this is returning a new component
+    return (props) => {
+        return (
+            <div className='grocery-new-label-comp'>
+                <label className='new-label'>New</label>
+                <GroceryCard {...props}/>
+            </div>
+        )
+    }
 }

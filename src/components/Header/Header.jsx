@@ -12,7 +12,7 @@ const Header = () => {
         <div className="header">
             <Logo />
             <NavItems />
-            <div className='connection-status'>{onlineStatus ? `You're connected ✅` : `Connection Lost 🔴`}</div>
+            <div className='connection-status'>{onlineStatus ? `🟢 Online` : `🔴 Offline`}</div>
         </div>
     )
 }

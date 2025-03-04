@@ -25,7 +25,7 @@ export default function NavItems() {
                 <li><span className="cart-icon"></span>Cart</li>
                 <button
                     onClick={() => setIsLoggedIn(!isLoggedIn)}
-                    className='login-btn' style={{ backgroundColor: isLoggedIn ? 'rgb(233, 61, 61)' : 'green', color: 'white' }} >
+                    className={`login-btn ${isLoggedIn ? 'logged-out' : 'logged-in'}`}>
                     {isLoggedIn ? 'Log Out' : 'Log In'}
                 </button>
             </ul>

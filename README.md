@@ -72,6 +72,27 @@ Currently, two official plugins are available:
     - Function which takes a component and returns a component.
     - Refer GroceryCard.jsx for the example of implementation.
 
+    # Context in Reactjs
+    - Refer App.jsx and UserContext.js files for example
+    - // This is setting the user context we created. we have to wrap our app component with <UserContext.Provider> and pass the value like below
+    // This data loggedInUser is available to whole app level as we are wrapping <UserContext.Provider> to the app component
+    // If we wrap this <UserContext.Provider> to only Header component then the updated data loggedInUser is only available to Header component and its children.
+    // If we uncomment line number 28 (App.jsx) we are passing loggedInUser as Elon Musk in header Elon Musk value will be printed in header and in app all other places it will be Akshay Pai.
+    // We can pass function also into this provider like setUsername and use it somewhere else in our application to set the username.
+    // This setUsername is refered in NavItems.jsx for example
+    <!-- <UserContext.Provider value={{ loggedInUser: username, setUsername }}>
+      <div className='app'>
+        {/* <UserContext.Provider value={{ loggedInUser: "Elon Musk" }}> */}
+        <Header />
+        {/* </UserContext.Provider> */}
+        <Outlet />
+      </div>
+    </UserContext.Provider> -->
+
+    #
+
+
+
 
 
 
